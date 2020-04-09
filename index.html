@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="main.js"></script>
+    <title>Fetch api</title>
+</head>
+<body>
+    <!--<div id="data">-->
+    <!--    <input type="text" name="search" placeholer="search here"/>-->
+    <!--    <input type="submit" value="send"/>-->
+    <!--    <button onclick="clicked()"> click here</button>-->
+
+    <!--</div>-->
+    
+   <div>
+    <!--    <h1>Getting Started with Fetch Api</h1>-->
+    <!--    <button id="fetchUserDataBtn">Fetch User Data</button>-->
+    <!--</div>-->
+    <!-- <hr>-->
+    <!--<div id="res">-->
+    <!--    <ul id="list">-->
+            
+    <!--    </ul>-->
+    </div>
+    <script>
+
+// document.getElementById('fetchUserDataBtn').addEventListener('click', fetchdata);
+//     async function fetchdata(){
+//          alert("here!");
+//         const response = await fetch ('https://www.hatchways.io/api/assessment/student');
+//           alert("here! again");
+//         const myJson = await response.json();
+//           alert("here! again again");
+//         JSON.stringify(myJson);
+//         for(var i = 0; i<myJson.results.length; i++){
+//                   var ul = document.getElementById("list");
+//                   var li = document.createElement("li");
+//                   li.appendChild(document.createTextNode(myJson.results[i].name));
+//                   ul.appendChild(li);
+//             }
+//     }
+
+const Http = new XMLHttpRequest();
+const url='https://www.hatchways.io/api/assessment/student';
+Http.open("GET", url);
+Http.send();
+
+Http.onreadystatechange = function() {
+    if (this.readyState==4 && this.status==200){ 
+    console.log(Http.responseText)
+ }
+}
+     </script>
+     
+</body>
+</html>
